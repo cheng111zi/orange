@@ -30,6 +30,12 @@
 :global(aside) { grid-area: sidebar; }
 :global(footer) { grid-area: footer; }
 
+.contentArea {
+  grid-area: main;
+}
+
+
+
 /* 响应式：当屏幕宽度小于 768px 时，改为单列布局 */
 @media (max-width: 768px) {
   .pageLayout {
@@ -44,3 +50,4 @@
     padding: 15px;
   }
 }
+

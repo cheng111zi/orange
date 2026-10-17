@@ -104,3 +104,24 @@
     font-size: 1.5rem;
   }
 }
+
+.titleLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.titleLink:hover h2 {
+  color: #3498db;
+}
+
+.readMore {
+  display: inline-block;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,51 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.backLink {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.article {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.articleHeader {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 15px;
+}
+
+.articleHeader h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.articleHeader p {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.section {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.articleFooter {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed #eaecef;
+  font-size: 0.9rem;
+}
