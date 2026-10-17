@@ -36,12 +36,15 @@ const App: React.FC = () => {
 
         {/* 中间区域：随 URL 变化 */}
         <div className={styles.contentArea}>
-          <Routes>
+            <Routes>
+            {/* 首页/根路径直接显示文章列表 */}
             <Route path="/" element={<ArticleListPage />} />
             <Route path="/articles" element={<ArticleListPage />} />
             <Route path="/articles/:id" element={<ArticleDetailPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/subscribe" element={<SubscribePage />} />
+            {/* 兜底：任何未匹配的路径都跳回文章列表 */}
+            <Route path="*" element={<ArticleListPage />} />
           </Routes>
         </div>
 
