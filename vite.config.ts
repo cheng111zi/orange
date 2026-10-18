@@ -4,6 +4,6 @@ import { vitePages } from '@kingironman2011/vite-pages'
 
 export default defineConfig(({ mode }) => ({
   // 仅在 build（生产构建）时使用 /orange/，开发时使用 /
-  base: mode === 'build' ? '/orange/' : '/',
+  base: mode === 'build' ? './' : '/',
   plugins: [react(), vitePages()],
 }))
