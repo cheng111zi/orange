@@ -7,7 +7,7 @@
 /* 明亮模式变量 */
 :root {
   /* 你的文件在 src/assets 下，因为是 index.css 引用，所以用相对路径 */
-  --bg-image: url('./assets/lei.png'); 
+  --bg-image: url('./assets/lei.jpg'); 
   --text-color: #333;
   --card-bg: rgba(255, 255, 255, 0.85); /* 卡片半透明，透出背景图 */
 }
