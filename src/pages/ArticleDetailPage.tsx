@@ -5,14 +5,11 @@ import { ThemeContext } from '../contexts/ThemeContext';
 import styles from './ArticleDetailPage.module.css';
 
 const ArticleDetailPage: React.FC = () => {
-  // 从 URL 中取出参数 id（字符串类型）
   const { id } = useParams<{ id: string }>();
   const theme = useContext(ThemeContext);
 
-  // 把字符串转成数字，再查找文章
   const article = id ? getArticleById(Number(id)) : undefined;
 
-  // 如果文章不存在（比如用户手输了 /articles/999）
   if (!article) {
     return (
       <main className={styles.main}>
@@ -24,7 +21,6 @@ const ArticleDetailPage: React.FC = () => {
 
   return (
     <main className={styles.main}>
-      {/* 返回链接 */}
       <Link to="/articles" className={styles.backLink}>
         ← 返回文章列表
       </Link>
@@ -47,9 +43,14 @@ const ArticleDetailPage: React.FC = () => {
             标签:{' '}
             {article.tags.map((tag, index) => (
               <React.Fragment key={tag}>
-                <a href="#" style={{ color: theme.primaryColor }}>
+                {/* 👇 改成 Link 并携带 state 跳回列表页 */}
+                <Link 
+                  to="/articles" 
+                  state={{ filterTag: tag }} 
+                  style={{ color: theme.primaryColor, textDecoration: 'none' }}
+                >
                   {tag}
-                </a>
+                </Link>
                 {index < article.tags.length - 1 && ', '}
               </React.Fragment>
             ))}

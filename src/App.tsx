@@ -9,7 +9,8 @@ import ArticleDetailPage from './pages/ArticleDetailPage';
 import AboutPage from './pages/AboutPage';
 import SubscribePage from './pages/SubscribePage';
 import styles from './App.module.css';
-import { ThemeContext } from './contexts/ThemeContext';
+// 只引入 ThemeProvider，不需要再引入 ThemeContext 了
+import { ThemeProvider } from './contexts/ThemeContext';
 
 const App: React.FC = () => {
   const [now, setNow] = useState(new Date());
@@ -26,17 +27,18 @@ const App: React.FC = () => {
     alert(`订阅成功！确认邮箱：${email}`);
   };
 
-  const theme = { primaryColor: '#9b59b6' };
+  // 删掉这里原来的 const theme = { primaryColor: '#9b59b6' };
 
   return (
-    <ThemeContext.Provider value={theme}>
+    // 把原来的 ThemeContext.Provider 换成 ThemeProvider，不需要传 value
+    <ThemeProvider>
       <div className={styles.pageLayout}>
         <Header />
         <Nav />
 
         {/* 中间区域：随 URL 变化 */}
         <div className={styles.contentArea}>
-            <Routes>
+          <Routes>
             {/* 首页/根路径直接显示文章列表 */}
             <Route path="/" element={<ArticleListPage />} />
             <Route path="/articles" element={<ArticleListPage />} />
@@ -51,7 +53,7 @@ const App: React.FC = () => {
         <Sidebar now={now} onSubscribe={handleSubscribe} />
         <Footer />
       </div>
-    </ThemeContext.Provider>
+    </ThemeProvider>
   );
 };
 

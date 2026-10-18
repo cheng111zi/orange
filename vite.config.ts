@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { vitePages } from '@kingironman2011/vite-pages'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  base: '/orange/', // 注意：仓库名必须与你的 GitHub 仓库名称一致，以斜杠开头和结尾
-  plugins: [react(), vitePages()], 
-})
+export default defineConfig(({ mode }) => ({
+  // 仅在 build（生产构建）时使用 /orange/，开发时使用 /
+  base: mode === 'build' ? '/orange/' : '/',
+  plugins: [react(), vitePages()],
+}))

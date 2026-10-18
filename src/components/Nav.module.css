@@ -1,18 +1,26 @@
 .nav {
-  background-color: #2c3e50;
+  background-color: var(--nav-bg); /* 使用全局变量 */
   border-radius: 8px;
-  padding: 0 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  /* 下面这两行是关键，让列表和按钮左右分开 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+  transition: background-color 0.3s ease;
+  
+  display: flex;                  /* 开启弹性盒布局 */
+  justify-content: space-between; /* 关键：让列表在左，按钮在右 */
+  align-items: center;            /* 关键：让列表和按钮垂直居中对齐 */
 }
 
 .navList {
-  display: flex;               /* 使用 Flexbox 水平排列导航项 */
+  display: flex;
   list-style: none;
-  gap: 10px;
-  flex-wrap: wrap;
+  padding: 0 10px;
+  margin: 0;
 }
 
-.navList li a {                
+.navList li a {
   display: inline-block;
   padding: 15px 20px;
   color: #ecf0f1;
@@ -22,21 +30,8 @@
   border-radius: 4px;
 }
 
-/* 悬停状态 + 激活状态共用同一个样式 */
-.navList li a:hover,   
+.navList li a:hover,
 .navList li a.active {
   background-color: #3498db;
   color: white;
-}
-
-/* 移动端：小屏幕上导航项竖着排 */
-@media (max-width: 480px) {
-  .navList {
-    flex-direction: column;
-    gap: 5px;
-  }
-  .navList li a {
-    display: block;
-    text-align: center;
-  }
 }
