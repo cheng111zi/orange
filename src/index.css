@@ -7,15 +7,15 @@
 /* 明亮模式变量 */
 :root {
   /* 你的文件在 src/assets 下，因为是 index.css 引用，所以用相对路径 */
-  --bg-image: url('./assets/lu.png'); 
+  --bg-image: url('./assets/lei.png'); 
   --text-color: #333;
   --card-bg: rgba(255, 255, 255, 0.85); /* 卡片半透明，透出背景图 */
 }
 
 /* 暗黑模式变量 */
 [data-theme="dark"] {
-  --bg-image: url('./assets/xin.png');
-  --text-color: #e0e0e0;
+  --bg-image: url('./assets/xingkong.png');
+  --text-color: #e65fe6;
   --card-bg: rgba(30, 30, 30, 0.85); /* 深色卡片半透明 */
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import reactSvg from '../assets/react.svg';
+import reactSvg from '../assets/lu.png';
 import styles from './SimplePage.module.css';
 
 const AboutPage: React.FC = () => {

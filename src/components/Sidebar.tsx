@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Sidebar.module.css';
-import reactSvg from '../assets/react.svg';
+import reactSvg from '../assets/lu.png';
 
 interface SidebarProps {
   now: Date;
